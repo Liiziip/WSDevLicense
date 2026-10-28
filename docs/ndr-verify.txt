@@ -1,0 +1,89 @@
+midl 8.01.0622  (switches: /env win32 /ms_ext /c_ext /acf explicit_handle)
+entry offsets: ['0x0', '0x28', '0x52']
+IDL/ACF used: see tools/ndr_proc.py FINAL_BODY
+
+==============================================================================
+arm.exe VA 0x2 (46 bytes)    midl reference (40 bytes)
+==============================================================================
+ARM:
+  arm.exe                    46 bytes
+  handle      FC_BIND_PRIMITIVE flags=0 offset=0x0000 (32 00 00 00 00 00 40 00)
+  hints       
+  Oi2         HasReturn|HasExtensions  count=2
+  ext         size=14 flags2=HasNewCorrDesc|has range on conformance
+  param 0     IsOut|IsSimpleRef                                    off= 4  type+0x06
+  param 1     IsOut|IsReturn|IsBasetype                            off= 8  FC_LONG
+MIDL:
+  midl                       40 bytes
+  handle      FC_BIND_PRIMITIVE flags=0 offset=0x0000 (32 00 00 00 00 00 40 00)
+  hints       
+  Oi2         HasReturn|HasExtensions  count=2
+  ext         size=8 flags2=HasNewCorrDesc
+  param 0     IsOut|IsSimpleRef                                    off= 4  type+0x06
+  param 1     IsOut|IsReturn|IsBasetype                            off= 8  FC_LONG
+field differences:
+  ext      arm 0e 41 00 00 00 00 00 00 02 00 02 80 81 00   midl 08 01 00 00 00 00 00 00
+
+==============================================================================
+arm.exe VA 0x30 (46 bytes)    midl reference (42 bytes)
+==============================================================================
+ARM:
+  arm.exe                    46 bytes
+  handle      FC_BIND_CONTEXT flags=VIA_PTR|IN|OUT|STRICT offset=0x0000 (30 e8 00 00 00 00 38 00 40 00)
+  hints       
+  Oi2         HasReturn|HasExtensions  count=2
+  ext         size=12 flags2=HasNewCorrDesc|has range on conformance
+  param 0     IsIn|IsOut|IsSimpleRef                               off= 0  type+0x0e
+  param 1     IsOut|IsReturn|IsBasetype                            off= 4  FC_LONG
+MIDL:
+  midl                       42 bytes
+  handle      FC_BIND_CONTEXT flags=VIA_PTR|IN|OUT offset=0x0000 (30 e0 00 00 00 00 38 00 40 00)
+  hints       
+  Oi2         HasReturn|HasExtensions  count=2
+  ext         size=8 flags2=HasNewCorrDesc
+  param 0     IsIn|IsOut|IsSimpleRef                               off= 0  type+0x0e
+  param 1     IsOut|IsReturn|IsBasetype                            off= 4  FC_LONG
+field differences:
+  handle   arm 30 e8 00 00 00 00 38 00 40 00   midl 30 e0 00 00 00 00 38 00 40 00
+  ext      arm 0c 41 00 00 00 00 00 00 01 00 01 80   midl 08 01 00 00 00 00 00 00
+
+==============================================================================
+arm.exe VA 0x5e (82 bytes)    midl reference (73 bytes)
+==============================================================================
+ARM:
+  arm.exe                    82 bytes
+  handle      FC_BIND_CONTEXT flags=IN|STRICT offset=0x0000 (30 48 00 00 00 00 32 00 24 00)
+  hints       
+  Oi2         ServerMustSize|ClientMustSize|HasReturn|HasExtensions  count=7
+  ext         size=18 flags2=HasNewCorrDesc|ClientCorrCheck|ServerCorrCheck|has range on conformance
+  param 0     IsIn                                                 off= 0  type+0x12
+  param 1     IsIn|IsBasetype                                      off= 4  FC_ENUM16
+  param 2     IsIn|IsByValue                                       off= 8  type+0x16
+  param 3     MustSize|MustFree|IsIn                               off=12  type+0x20
+  param 4     IsOut|IsBasetype|IsSimpleRef|0x2000                  off=16  FC_LONG
+  param 5     MustSize|MustFree|IsOut|0x2000                       off=20  type+0x3a
+  param 6     IsOut|IsReturn|IsBasetype                            off=24  FC_LONG
+MIDL:
+  midl                       73 bytes
+  handle      FC_BIND_CONTEXT flags=IN offset=0x0000 (30 40 00 00 00 00 32 00 24 00)
+  hints       47
+  Oi2         ServerMustSize|ClientMustSize|HasReturn|HasExtensions  count=7
+  ext         size=8 flags2=HasNewCorrDesc|ClientCorrCheck|ServerCorrCheck
+  param 0     IsIn                                                 off= 0  type+0x12
+  param 1     IsIn|IsBasetype                                      off= 4  FC_ENUM16
+  param 2     IsIn|IsByValue                                       off= 8  type+0x16
+  param 3     MustSize|MustFree|IsIn                               off=12  type+0x20
+  param 4     IsOut|IsBasetype|IsSimpleRef|0x2000                  off=16  FC_LONG
+  param 5     MustSize|MustFree|IsOut|0x2000                       off=20  type+0x30
+  param 6     IsOut|IsReturn|IsBasetype                            off=24  FC_LONG
+field differences:
+  handle   arm 30 48 00 00 00 00 32 00 24 00   midl 30 40 00 00 00 00 32 00 24 00
+  ext      arm 12 47 01 00 01 00 00 00 06 00 06 80 81 82 83 fc fc 00   midl 08 07 01 00 01 00 00 00
+  param 5: arm 13 20 14 00 3a 00   midl 13 20 14 00 30 00
+  pad      arm -   midl 00
+
+==============================================================================
+type format string: arm 158 bytes, midl 69 bytes
+==============================================================================
+arm : 00 00 11 04 02 00 30 a8 00 00 11 04 02 00 30 e9 00 00 30 49 00 00 b7 08 00 00 00 00 00 00 10 00 1b 00 01 00 29 00 08 00 11 00 01 00 00 00 00 00 00 00 10 00 02 5b 11 0c 08 5c 11 14 02 00 12 20 02 00 1b 00 01 00 29 54 10 00 01 00 00 00 00 00 00 00 00 00 00 00 02 5b b7 08 00 00 00 00 00 00 10 00 1b 00 01 00 29 00 0c 00 11 00 01 00 00 00 00 00 00 00 10 00 02 5b 11 14 02 00 12 20 02 00 1b 00 01 00 29 54 14 00 01 00 00 00 00 00 00 00 00 00 00 00 02 5b 00 00 00 00 00 00 00 00
+midl: 00 00 11 04 02 00 30 a0 00 00 11 04 02 00 30 e1 00 00 30 41 00 00 b7 08 00 00 00 00 00 00 10 00 1b 00 01 00 29 00 08 00 01 00 02 5b 11 0c 08 5c 11 14 02 00 12 00 02 00 1b 00 01 00 28 54 10 00 01 00 02 5b 00

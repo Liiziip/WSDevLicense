@@ -1,0 +1,20 @@
+import "unknwn.idl";
+[
+  uuid(C453C318-B4A8-4188-80C4-73E6C7417DBF),
+  version(1.0),
+  pointer_default(unique)
+]
+interface Wss
+{
+typedef [context_handle] void *WSSCTX;
+typedef enum _OP { OP_INSTALL = 0, OP_REMOVE = 0xc } OP;
+
+HRESULT Open([out] WSSCTX *pctx);
+HRESULT Close([in,out] WSSCTX *pctx);
+HRESULT Invoke([in] WSSCTX ctx, [in] OP op,
+               [in, range(0,0x100000)] unsigned long cb,
+               [in,size_is(cb)] char p[],
+               [out] long *pcb,
+               [out,size_is(,*pcb)] char **pp);
+
+}

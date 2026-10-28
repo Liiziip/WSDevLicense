@@ -1,0 +1,9 @@
+[
+  uuid(11111111-2222-3333-4444-555555555555),
+  version(1.0),
+  explicit_handle
+]
+interface TestExplicit
+{
+    HRESULT CreateSession([out] int *session);
+}

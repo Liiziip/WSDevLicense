@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{4E1D9A10-0001-4C1E-9B11-000000000001}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="interface">
+      <UniqueIdentifier>{4E1D9A10-0001-4C1E-9B11-000000000002}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="docs">
+      <UniqueIdentifier>{4E1D9A10-0001-4C1E-9B11-000000000003}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.c"><Filter>src</Filter></ClCompile>
+    <ClCompile Include="src\license.c"><Filter>src</Filter></ClCompile>
+    <ClCompile Include="src\rpc.c"><Filter>src</Filter></ClCompile>
+    <ClCompile Include="src\wss_rpc_c.c"><Filter>interface</Filter></ClCompile>
+    <ClCompile Include="src\midl_blob.c"><Filter>src</Filter></ClCompile>
+    <ClCompile Include="src\bag.c"><Filter>src</Filter></ClCompile>
+    <ClCompile Include="src\serialize.c"><Filter>src</Filter></ClCompile>
+    <ClCompile Include="src\svc.c"><Filter>src</Filter></ClCompile>
+    <ClCompile Include="src\file.c"><Filter>src</Filter></ClCompile>
+    <ClCompile Include="src\print.c"><Filter>src</Filter></ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\wss.h"><Filter>src</Filter></ClInclude>
+    <ClInclude Include="src\app.h"><Filter>src</Filter></ClInclude>
+    <ClInclude Include="src\wss_rpc.h"><Filter>interface</Filter></ClInclude>
+    <ClInclude Include="src\midl_blob.h"><Filter>src</Filter></ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\wss_rpc.idl"><Filter>interface</Filter></None>
+    <None Include="src\wss_rpc.acf"><Filter>interface</Filter></None>
+    <None Include="build.cmd"><Filter>docs</Filter></None>
+    <None Include="tools\midl_stub.cmd"><Filter>interface</Filter></None>
+    <None Include="README.md"><Filter>docs</Filter></None>
+  </ItemGroup>
+</Project>

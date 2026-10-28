@@ -1,0 +1,45 @@
+/*
+ * wss_rpc.idl - the WSS developer-licence interface of arm.exe.
+ *
+ * Reconstructed from the NDR procedure format strings at VA 0x401890 (see
+ * docs/ndr-proc2.md).  The three procedures the tool uses are, in the
+ * server's dispatch order:
+ *
+ *   proc 0  Open    (explicit primitive binding -> context handle)
+ *   proc 1  Close   (context handle, in/out by pointer)
+ *   proc 2  Invoke  (context handle, request blob -> response blob)
+ *
+ * The parameter types and directions below were verified byte for byte
+ * against the format entry at 0x4018EE: midl 8.01 regenerates descriptors
+ * 0,1,2,3,4,6 identically and 5 differs only in a type-string offset (see
+ * docs/ndr-proc2.md section 3).
+ */
+import "unknwn.idl";
+
+[
+  uuid(C453C318-B4A8-4188-80C4-73E6C7417DBF),
+  version(1.0),
+  pointer_default(unique)
+]
+interface Wss
+{
+    typedef [context_handle] void *WSSCTX;
+
+    typedef enum _OP
+    {
+        OP_INSTALL = 0,
+        OP_REMOVE  = 0xc
+    } OP;
+
+    HRESULT Open([out] WSSCTX *pctx);
+
+    HRESULT Close([in, out] WSSCTX *pctx);
+
+    HRESULT Invoke(
+        [in] WSSCTX ctx,
+        [in] OP op,
+        [in, range(0, 0x100000)] unsigned long cb,
+        [in, size_is(cb)] unsigned char p[],
+        [out] long *pcb,
+        [out, size_is(, *pcb)] unsigned char **pp);
+}
