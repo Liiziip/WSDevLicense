@@ -1,4 +1,4 @@
-#Cautious!!  This project is completely reversed by AI and I have completely no ideal what it had written in the code.
+#Cautious!!  This project is completely reversed by AI and I have completely no idea what it had written in the code.
 
 # arm.exe → x86 reconstruction
 
