@@ -1,3 +1,5 @@
+#Cautious!!  This project is completely reversed by AI and I have completely no ideal what it had written in the code.
+
 # arm.exe → x86 reconstruction
 
 A source-level port of `arm.exe`, the Windows RT *"Utility for Windows Store Developer
@@ -147,6 +149,3 @@ and its RPC interface exist only as a stripped 2011 ARM binary that no longer ru
 supported OS.  No Microsoft binaries, symbols or SDK source are redistributed here — only
 observations, byte-level facts and newly written code.  Reviewed against the original where
 possible: undocumented behaviour is marked as such in `docs/` rather than guessed.
-
-No licence has been chosen for this repository yet; if you intend to publish it, add one
-(MIT or Apache-2.0 are the usual choices for a reconstruction like this).
