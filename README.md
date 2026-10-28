@@ -127,21 +127,6 @@ python tools\ndr_proc.py verify     # build the reference stub and diff every fi
 midl-version details (the length-prefixed extension block, and how midl 7 encoded a `[range]`
 check inside a correlation descriptor).
 
-## What is *not* in this repository
-
-Deliberately excluded (see `.gitignore`), because it is either third party, regenerable, or
-not redistributable:
-
-* `arm.exe`, `x64.exe`, `WSService.dll`, `WSClient_x86.dll` — Microsoft binaries;
-* licence `.xml` inputs and captured token `.dat` files — machine specific test data;
-* `work/`, `ghidra_12.2_PUBLIC/` — leftovers from the original analysis session (decompiler
-  dumps and the tool that produced them); nothing here refers to them any more and the
-  `.gitignore` keeps them out;
-* `build/` — compiler output.
-
-The build needs none of them, and neither does any tool in `tools/` except `mkblobs.py`
-and `ndr_proc.py`, which want your own copy of `arm.exe` in the repository root.
-
 ## Provenance
 
 This is a reverse-engineering exercise for interoperability and preservation: the program
