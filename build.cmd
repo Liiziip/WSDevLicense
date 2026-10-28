@@ -9,7 +9,7 @@ if not exist "%VSDIR%\VC\Auxiliary\Build\vcvars32.bat" (
 )
 call "%VSDIR%\VC\Auxiliary\Build\vcvars32.bat" >nul
 if not exist build mkdir build
-cl /nologo /W3 /TC /O2 /GS- /D_CRT_SECURE_NO_WARNINGS /Fo:build\ /Fe:build\arm_x86.exe ^
+cl /nologo /W3 /TC /O2 /GS- /MT /D_CRT_SECURE_NO_WARNINGS /Fo:build\ /Fe:build\arm_x86.exe ^
    src\main.c src\print.c src\file.c src\svc.c src\license.c src\rpc.c ^
    src\midl_blob.c src\wss_rpc_c.c src\bag.c src\serialize.c ^
    /link /SUBSYSTEM:CONSOLE /DYNAMICBASE /NXCOMPAT rpcrt4.lib advapi32.lib
