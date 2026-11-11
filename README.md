@@ -19,6 +19,8 @@ against the reference stub.  `docs/` records that work, including the dead ends.
 original.  On a machine without `WSService` (stock Windows 11, for instance) the tool reports
 the same failure the original would: `0x800706BA` from the call, then `0x80070424` when the
 service cannot be started.
+## Test on Windows 8 build 8032 x86 (32bit)
+![](https://github.com/Liiziip/WSDevLicense/blob/main/docs/Windows%208.x%20x64%20(2)-2026-11-10-20-54-50.png)
 
 | area | evidence |
 |---|---|
